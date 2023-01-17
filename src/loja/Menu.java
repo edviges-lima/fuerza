@@ -4,10 +4,11 @@ import java.util.*;
 
 public class Menu {
     public static void main(String[] args) {
-        Scanner ler =new Scanner(System.in);
+        Scanner ler = new Scanner(System.in);
 
         int opcao;
-
+        Cliente cliente01 = new Cliente(0,"null","null","null","null","null");
+        Funcionario funcionario01 = new Funcionario(0,"Null","Null","Null","Null","Null",1200);
         while (true){
             System.out.print("""
                     *****************************************************
@@ -30,6 +31,28 @@ public class Menu {
             switch (opcao) {
                 case 1:
                     System.out.println("Cadastrar Cliente\n\n");
+                    System.out.println("Digite o ID: ");
+                    cliente01.id = ler.nextInt();
+                    System.out.println("\n");
+                    System.out.println("Digite o Nome: ");
+                    cliente01.nome = ler.next();
+                    System.out.println("\n");
+                    System.out.println("Digite o Cpf: ");
+                    cliente01.cpf = ler.next();
+                    System.out.println("\n");
+                    System.out.println("Digite o Telefone: ");
+                    cliente01.telefone = ler.next();
+                    System.out.println("\n");
+                    System.out.println("Digite o Endereço: ");
+                    cliente01.endereco = ler.next();
+                    System.out.println("\n");
+                    System.out.println("Digite o Email: ");
+                    cliente01.email = ler.next();
+                    System.out.println("\n");
+                    cliente01.visualizar();
+
+
+
 
                     break;
                 case 2:
@@ -38,6 +61,23 @@ public class Menu {
                     break;
                 case 3:
                     System.out.println("Cadastrar Funcionário\n\n");
+
+                    System.out.println("Digite o ID: ");
+                    funcionario01.id = ler.nextInt();
+                    System.out.println("\n");
+                    System.out.println("Digite o Nome: ");
+                    funcionario01.nome = ler.next();
+                    System.out.println("\n");
+                    System.out.println("Digite o Cpf: ");
+                    funcionario01.cpf = ler.next();
+                    System.out.println("\n");
+                    System.out.println("Digite o Cargo: ");
+                    funcionario01.cargo = ler.next();
+                    System.out.println("\n");
+                    System.out.println("Digite a data de adimissão: ");
+                    funcionario01.dataAdimissao = ler.next();
+                    System.out.println("\n");
+                    funcionario01.visualizar();
 
                     break;
                 case 4:
@@ -64,7 +104,9 @@ public class Menu {
                     System.out.println("\nOpção Inválida!\n");
                     break;
             }
+
         }
+
 
 
     }
