@@ -1,9 +1,9 @@
 package loja;
 
 public class Cliente extends Pessoa {
-    public String telefone;
-    public String endereco;
-    public String email;
+    private String telefone;
+    private String endereco;
+    private String email;
 
     public Cliente(int id, String nome, String cpf, String telefone, String endereco, String email) {
         super(id, nome, cpf);

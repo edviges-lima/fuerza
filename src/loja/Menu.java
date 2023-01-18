@@ -7,8 +7,8 @@ public class Menu {
         Scanner ler = new Scanner(System.in);
 
         int opcao;
-        Cliente cliente01 = new Cliente(0,"null","null","null","null","null");
-        Funcionario funcionario01 = new Funcionario(0,"Null","Null","Null","Null","Null",1200);
+        ControllerCliente cliente01 =  new  ControllerCliente(0,"null","null","null","null","null");
+        ControllerFuncionario funcionario01 = new ControllerFuncionario(0,"Null","Null","Null","Null","Null",1200);
         Produto produto01 = new Produto(134234, "Sal",5.99,10000);
 
         while (true){
@@ -32,32 +32,18 @@ public class Menu {
 
             switch (opcao) {
                 case 1:
-                    System.out.println("Cadastrar Cliente\n\n");
-                    System.out.println("Digite o ID: ");
-                    cliente01.id = ler.nextInt();
-                    System.out.println("\n");
-                    System.out.println("Digite o Nome: ");
-                    cliente01.nome = ler.next();
-                    System.out.println("\n");
-                    System.out.println("Digite o Cpf: ");
-                    cliente01.cpf = ler.next();
-                    System.out.println("\n");
-                    System.out.println("Digite o Telefone: ");
-                    cliente01.telefone = ler.next();
-                    System.out.println("\n");
-                    System.out.println("Digite o Endereço: ");
-                    cliente01.endereco = ler.next();
-                    System.out.println("\n");
-                    System.out.println("Digite o Email: ");
-                    cliente01.email = ler.next();
-                    System.out.println("\n");
+
+                    cliente01.id();
+                    cliente01.nome();
+                    cliente01.cpf();
+                    cliente01.telefone();
+                    cliente01.endereco();
+                    cliente01.email();
                     cliente01.visualizar();
-
-
-
 
                     break;
                 case 2:
+
                     System.out.println("Cadastrar Produto\n\n");
                     System.out.println("Digite os dados do produto: ");
                     System.out.print("Código: ");
@@ -74,21 +60,11 @@ public class Menu {
                 case 3:
                     System.out.println("Cadastrar Funcionário\n\n");
 
-                    System.out.println("Digite o ID: ");
-                    funcionario01.id = ler.nextInt();
-                    System.out.println("\n");
-                    System.out.println("Digite o Nome: ");
-                    funcionario01.nome = ler.next();
-                    System.out.println("\n");
-                    System.out.println("Digite o Cpf: ");
-                    funcionario01.cpf = ler.next();
-                    System.out.println("\n");
-                    System.out.println("Digite o Cargo: ");
-                    funcionario01.cargo = ler.next();
-                    System.out.println("\n");
-                    System.out.println("Digite a data de adimissão: ");
-                    funcionario01.dataAdimissao = ler.next();
-                    System.out.println("\n");
+                    funcionario01.id();
+                    funcionario01.nome();
+                    funcionario01.cpf();
+                    funcionario01.cargo();
+                    funcionario01.dataAdimissao();
                     funcionario01.visualizar();
 
                     break;

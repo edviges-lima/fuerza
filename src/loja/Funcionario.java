@@ -2,10 +2,10 @@ package loja;
 
 public class Funcionario extends Pessoa{
 
-    protected String cargo;
-    protected String dataAdimissao;
-    protected String saida;
-    private float salario = 1200;
+    public String cargo;
+    public String dataAdimissao;
+    public String saida;
+    public float salario = 1200.00f;
 
     public Funcionario(int id, String nome, String cpf, String cargo, String dataAdimissao, String saida, float salario) {
         super(id, nome, cpf);
