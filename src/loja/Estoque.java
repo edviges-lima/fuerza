@@ -2,11 +2,11 @@ package loja;
 
 public class Estoque {
     public String nome;
-    public double preço;
+    public double preco;
     public int quantidade;
 
     public double totalEstoque() {
-        return preço * quantidade;
+        return preco * quantidade;
     }
 
     public void addProdutos(int quantidade) {
@@ -19,11 +19,11 @@ public class Estoque {
 
     public String toString() {
         return nome
-                + ", $ "
-                + String.format("%.2f", preço)
+                + ", R$ "
+                + String.format("%.2f", preco)
                 + ", "
                 + quantidade
-                + " units, Total: $ "
+                + " unidades, Total: R$ "
                 + String.format("%.2f", totalEstoque());
     }
 }
