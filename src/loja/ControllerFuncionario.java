@@ -46,7 +46,7 @@ public class ControllerFuncionario extends Funcionario implements CadastrarFunci
     @Override
     public void dataAdimissao() {
 
-        System.out.println("Digite a data de adimissão: ");
+        System.out.println("Digite a data de admissão: ");
         setDataAdimissao(ler.next());
 
     }

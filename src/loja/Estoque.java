@@ -1,30 +1,30 @@
 package loja;
 
-public class Estoque {
-    public String nome;
-    public double preco;
-    public int quantidade;
+public class Estoque extends Produto{
 
-    public double totalEstoque() {
-        return preco * quantidade;
+        public String entrada;
+        public String saida;
+
+    public Estoque(int cod, String nome, double preco, int quantidade, String entrada, String saída) {
+        super(cod, nome, preco, quantidade);
+        this.entrada = entrada;
+        this.saida = saída;
     }
 
-    public void addProdutos(int quantidade) {
-        this.quantidade += quantidade;
+    public String getEntrada() {
+        return entrada;
     }
 
-    public void removerProdutos(int quantidade) {
-        this.quantidade -= quantidade;
+    public void setEntrada(String entrada) {
+        this.entrada = entrada;
     }
 
-    public String toString() {
-        return nome
-                + ", R$ "
-                + String.format("%.2f", preco)
-                + ", "
-                + quantidade
-                + " unidades, Total: R$ "
-                + String.format("%.2f", totalEstoque());
+    public String getSaída() {
+        return saida;
+    }
+
+    public void setSaída(String saída) {
+        this.saida = saída;
     }
 }
 
