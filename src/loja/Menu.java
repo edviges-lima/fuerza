@@ -9,6 +9,8 @@ public class Menu {
         int opcao;
         Cliente cliente01 = new Cliente(0,"null","null","null","null","null");
         Funcionario funcionario01 = new Funcionario(0,"Null","Null","Null","Null","Null",1200);
+        Produto produto01 = new Produto(134234, "Sal",5.99,10000);
+
         while (true){
             System.out.print("""
                     *****************************************************
@@ -57,6 +59,16 @@ public class Menu {
                     break;
                 case 2:
                     System.out.println("Cadastrar Produto\n\n");
+                    System.out.println("Digite os dados do produto: ");
+                    System.out.print("Código: ");
+                    produto01.setCod(ler.nextInt());
+                    System.out.print("Nome: ");
+                    produto01.setNome(ler.next());
+                    System.out.print("Preço: ");
+                    produto01.setPreco(ler.nextDouble());
+                    System.out.print("Quantidade em estoque: ");
+                    produto01.setQuantidade(ler.nextInt());
+                    System.out.println("Product data: " + produto01);
 
                     break;
                 case 3:
