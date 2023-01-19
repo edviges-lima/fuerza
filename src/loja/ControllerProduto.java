@@ -2,8 +2,8 @@ package loja;
 
 import java.util.Scanner;
 
-public class ControllerProduto extends Produto implements RepositoryProduto{
-Scanner ler = new Scanner(System.in);
+public class ControllerProduto extends Produto implements RepositoryProduto {
+    Scanner ler = new Scanner(System.in);
 
     public ControllerProduto(String cod, String nome, String preco, String quantidade) {
         super(cod, nome, preco, quantidade);

@@ -2,7 +2,7 @@ package loja;
 
 import java.util.Scanner;
 
-public class ControllerCliente extends Cliente implements CadastrarCliente{
+public class ControllerCliente extends Cliente implements CadastrarCliente {
     Scanner ler = new Scanner(System.in);
 
     public ControllerCliente(String nome, String cpf, String telefone, String endereco, String email) {

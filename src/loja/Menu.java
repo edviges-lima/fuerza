@@ -21,7 +21,7 @@ public class Menu {
         while (true){
             System.out.print("""
                     *****************************************************
-                                         LOJA FUERZA                    \s
+                                           MENU                         \s
                     *****************************************************
                                                                         \s
                                    1 - Cadastro de Cliente              \s
@@ -139,6 +139,17 @@ public class Menu {
                     break;
                 case 4:
                     System.out.println("Controle de Vendas\n\n");
+
+                    System.out.println("Digite o código do produto: ");
+                    String codP = ler.next();
+                    System.out.println("Digite o nome do produto: ");
+                    String nomeP = ler.next();
+                    System.out.println("Digite o preço do produto: ");
+                    double precoP = ler.nextDouble();
+                    System.out.println("Digite a quantidade de produtos: ");
+                    int quantidadeP = ler.nextInt();
+                    double total = precoP*quantidadeP;
+                    System.out.println("O total a pagar é de: "+ "R$ " + total);
 
                     break;
                 case 5:

@@ -1,6 +1,6 @@
 package loja;
 
-public class ControllerEstoque extends Estoque implements RepositoryEstoque{
+public class ControllerEstoque extends Estoque implements RepositoryEstoque {
 
 
     public ControllerEstoque(String cod, String nome, String preco, String quantidade) {

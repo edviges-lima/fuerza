@@ -1,8 +1,6 @@
 package loja;
 
 
-
-
 public class Produto {
     public String cod;
     public String nome;
@@ -70,4 +68,4 @@ public class Produto {
     }
 */
 
- }
+}
