@@ -35,7 +35,7 @@ public class Menu {
             switch (opcao) {
                 case 1:
                     do {
-                        System.out.println("Cadastrar Cliente\n\n");
+                        System.out.println("Cadastrar Cliente\n");
 
                         //String nome, String cpf, String telefone, String endereco, String email
                         System.out.println("Nome: ");
@@ -65,7 +65,7 @@ public class Menu {
                     break;
                 case 2:
 
-                    System.out.println("Cadastrar Produto\n\n");
+                    System.out.println("Cadastrar Produto\n");
 
                     do {
                         //String cod, String nome, String preco, String quantidade
@@ -93,7 +93,7 @@ public class Menu {
 
                     break;
                 case 3:
-                    System.out.println("Cadastrar Funcionário\n\n");
+                    System.out.println("Cadastrar Funcionário\n");
 
                     do {
                         //String nome, String cpf, String cargo, String dataAdimissao, String saida, String salario
@@ -107,7 +107,7 @@ public class Menu {
                         String dataAdmissao = ler.next();
                         System.out.println("Data de Saída: ");
                         String dataSaida = ler.next();
-                        System.out.println("Salário: R$");
+                        System.out.println("Salário: R$ ");
                         String salario = ler.next();
 
                         Funcionario funcionario = new Funcionario(nome, cpf, cargo, dataAdmissao, dataSaida, salario);
@@ -127,7 +127,7 @@ public class Menu {
 
                     break;
                 case 4:
-                    System.out.println("Controle de Vendas\n\n");
+                    System.out.println("Caixa:\n");
 
                     System.out.println("Digite o código do produto: ");
                     String codP = ler.next();
