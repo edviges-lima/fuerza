@@ -76,12 +76,13 @@ public class Menu {
                     System.out.println("Cadastrar Produto\n\n");
 
                     do{
-                        produto01.getCod();
-                        produto01.getNome();
+                        produto01.cod();
+                        listaProduto.add(produto01.getCod());
+                        produto01.nome();
                         listaProduto.add(produto01.getNome());
-                        produto01.getPreco();
+                        produto01.preco();
                         listaProduto.add(produto01.getPreco());
-                        produto01.getQuantidade();
+                        produto01.quantidade();
                         listaProduto.add(produto01.getQuantidade());
                         System.out.println("Deseja cadastrar outro produto? S/N");
                         finalizar = ler.next();
@@ -92,7 +93,7 @@ public class Menu {
                     if(ver.equals("S")){
 
                         System.out.println("Estoque:");
-                        for(String estoque: lista){
+                        for(String estoque: listaProduto){
                             System.out.println(estoque+"\n");
 
 
