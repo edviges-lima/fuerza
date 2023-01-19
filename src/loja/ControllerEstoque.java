@@ -3,8 +3,8 @@ package loja;
 public class ControllerEstoque extends Estoque implements RepositoryEstoque{
 
 
-    public ControllerEstoque(int cod, String nome, double preco, int quantidade, String entrada, String saída) {
-        super(cod, nome, preco, quantidade, entrada, saída);
+    public ControllerEstoque(String cod, String nome, String preco, String quantidade) {
+        super(cod, nome, preco, quantidade);
     }
 
     @Override

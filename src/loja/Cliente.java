@@ -5,8 +5,8 @@ public class Cliente extends Pessoa {
     private String endereco;
     private String email;
 
-    public Cliente(int id, String nome, String cpf, String telefone, String endereco, String email) {
-        super(id, nome, cpf);
+    public Cliente( String nome, String cpf, String telefone, String endereco, String email) {
+        super(nome, cpf);
         this.telefone = telefone;
         this.endereco = endereco;
         this.email = email;
@@ -39,7 +39,6 @@ public class Cliente extends Pessoa {
     public void visualizar(){
 
         System.out.println("************************ CLIENTE CADASTRADO ************************ ");
-        System.out.println("ID: " + getId());
         System.out.println("Nome: " + getNome());
         System.out.println("Cpf: " + getCpf());
         System.out.println("telefone: " + getTelefone());

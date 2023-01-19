@@ -5,11 +5,10 @@ public class Estoque extends Produto{
         public String entrada;
         public String saida;
 
-    public Estoque(int cod, String nome, double preco, int quantidade, String entrada, String saída) {
+    public Estoque(String cod, String nome, String preco, String quantidade) {
         super(cod, nome, preco, quantidade);
-        this.entrada = entrada;
-        this.saida = saída;
     }
+
 
     public String getEntrada() {
         return entrada;

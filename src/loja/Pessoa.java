@@ -2,22 +2,12 @@ package loja;
 
 public class Pessoa {
 
-    public int id;
     public String nome;
     public String cpf;
 
-    public Pessoa(int id, String nome, String cpf) {
-        this.id = id;
+    public Pessoa(String nome, String cpf) {
         this.nome = nome;
         this.cpf = cpf;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNome() {
@@ -39,7 +29,7 @@ public class Pessoa {
     public void visualizar(){
 
 
-        System.out.println("ID: " + getId() + "Nome: " + getNome() +"Cpf: " + getCpf());
+        System.out.println("Nome: " + getNome() +"Cpf: " + getCpf());
 
     }
 

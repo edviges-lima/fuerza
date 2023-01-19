@@ -7,9 +7,16 @@ public class Menu {
         Scanner ler = new Scanner(System.in);
 
         int opcao;
-        ControllerCliente cliente01 =  new  ControllerCliente(0,"null","null","null","null","null");
-        ControllerFuncionario funcionario01 = new ControllerFuncionario(0,"Null","Null","Null","Null","Null",1200);
-        Produto produto01 = new Produto(134234, "Sal",5.99,10000);
+        ControllerCliente cliente01 =  new  ControllerCliente("Null","null","null","null","null");
+        ControllerFuncionario funcionario01 = new ControllerFuncionario("Null","11221");
+        ControllerProduto produto01 =  new ControllerProduto("1245", "Sal","0","Null");
+        String ver;
+        String finalizar = null;
+        ArrayList<String> lista = new ArrayList<>();
+        ArrayList<String> listaFuncionario = new ArrayList<>();
+        ArrayList<String> listaProduto = new ArrayList<>();
+
+
 
         while (true){
             System.out.print("""
@@ -32,40 +39,101 @@ public class Menu {
 
             switch (opcao) {
                 case 1:
-
-                    cliente01.id();
+                    do{
                     cliente01.nome();
+                    lista.add(cliente01.getNome());
                     cliente01.cpf();
+                    lista.add(cliente01.getCpf());
                     cliente01.telefone();
+                    lista.add(cliente01.getTelefone());
                     cliente01.endereco();
+                    lista.add(cliente01.getEndereco());
                     cliente01.email();
+                    lista.add(cliente01.getEmail());
                     cliente01.visualizar();
+                    System.out.println("Deseja cadastrar outro cliente? S/N");
+                    finalizar = ler.next();
+                    }while(finalizar.equals("S"));
+
+                    System.out.println("Deseja ver o Cadastro dos Clientes? S/N ");
+                    ver = ler.next();
+
+                    if(ver.equals("S")){
+
+                        System.out.println("LISTA COMPLETA:");
+                        for(String cliente: lista){
+                            System.out.println(cliente+"\n");
+
+
+                        }
+                    }
+
+
 
                     break;
                 case 2:
 
                     System.out.println("Cadastrar Produto\n\n");
-                    System.out.println("Digite os dados do produto: ");
-                    System.out.print("Código: ");
-                    produto01.setCod(ler.nextInt());
-                    System.out.print("Nome: ");
-                    produto01.setNome(ler.next());
-                    System.out.print("Preço: ");
-                    produto01.setPreco(ler.nextDouble());
-                    System.out.print("Quantidade em estoque: ");
-                    produto01.setQuantidade(ler.nextInt());
-                    System.out.println("Product data: " + produto01);
+
+                    do{
+                        produto01.getCod();
+                        produto01.getNome();
+                        listaProduto.add(produto01.getNome());
+                        produto01.getPreco();
+                        listaProduto.add(produto01.getPreco());
+                        produto01.getQuantidade();
+                        listaProduto.add(produto01.getQuantidade());
+                        System.out.println("Deseja cadastrar outro produto? S/N");
+                        finalizar = ler.next();
+                    }while(finalizar.equals("S"));
+                    System.out.println("Deseja ver o estoque? S/N ");
+                    ver = ler.next();
+
+                    if(ver.equals("S")){
+
+                        System.out.println("Estoque:");
+                        for(String estoque: lista){
+                            System.out.println(estoque+"\n");
+
+
+                        }
+                    }
+
+
 
                     break;
                 case 3:
                     System.out.println("Cadastrar Funcionário\n\n");
 
-                    funcionario01.id();
-                    funcionario01.nome();
-                    funcionario01.cpf();
-                    funcionario01.cargo();
-                    funcionario01.dataAdimissao();
-                    funcionario01.visualizar();
+                  do{
+                      funcionario01.nome();
+                      listaFuncionario.add(funcionario01.getNome());
+                      funcionario01.cpf();
+                      listaFuncionario.add(funcionario01.getCpf());
+                      funcionario01.cargo();
+                      listaFuncionario.add(funcionario01.getCargo());
+                      funcionario01.dataAdimissao();
+                      listaFuncionario.add(funcionario01.getDataAdimissao());
+                      funcionario01.visualizar();
+                      System.out.println("Deseja Cadastrar outro Funcionário? S/N");
+                      finalizar = ler.next();
+
+                  }while (finalizar.equals("S"));
+
+                    System.out.println("Deseja ver o Cadastro dos Funcionários? S/N ");
+                    ver = ler.next();
+
+                    if(ver.equals("S")){
+
+                        System.out.println("LISTA COMPLETA:");
+                        for(String funcionario: listaFuncionario){
+                            System.out.println(funcionario+"\n");
+
+
+                        }
+                    }
+
+
 
                     break;
                 case 4:

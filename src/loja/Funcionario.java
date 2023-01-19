@@ -5,15 +5,12 @@ public class Funcionario extends Pessoa{
     public String cargo;
     public String dataAdimissao;
     public String saida;
-    public float salario = 1200.00f;
+    public String salario = "1200";
 
-    public Funcionario(int id, String nome, String cpf, String cargo, String dataAdimissao, String saida, float salario) {
-        super(id, nome, cpf);
-        this.cargo = cargo;
-        this.dataAdimissao = dataAdimissao;
-        this.saida = saida;
-        this.salario = salario;
+    public Funcionario(String nome, String cpf) {
+        super(nome, cpf);
     }
+
 
     public String getCargo() {
         return cargo;
@@ -39,17 +36,16 @@ public class Funcionario extends Pessoa{
         this.saida = saida;
     }
 
-    public float getSalario() {
+    public String getSalario() {
         return salario;
     }
 
-    public void setSalario(float salario) {
+    public void setSalario(String salario) {
         this.salario = salario;
     }
     public void visualizar(){
 
         System.out.println("************************ FUNCIONÁRIO CADASTRADO ************************ ");
-        System.out.println("ID: " + getId());
         System.out.println("Nome: " + getNome());
         System.out.println("Cpf: " + getCpf());
         System.out.println("Cargo: " + getCargo());

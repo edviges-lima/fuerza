@@ -1,24 +1,26 @@
 package loja;
 
+
+
+
 public class Produto {
-    private int cod;
-    private String nome;
-    private double preco;
-    private int quantidade;
+    public String cod;
+    public String nome;
+    public String preco;
+    public String quantidade;
 
-
-    public Produto(int cod, String nome, double preco, int quantidade) {
+    public Produto(String cod, String nome, String preco, String quantidade) {
         this.cod = cod;
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;
     }
 
-    public int getCod() {
+    public String getCod() {
         return cod;
     }
 
-    public void setCod(int cod) {
+    public void setCod(String cod) {
         this.cod = cod;
     }
 
@@ -30,23 +32,24 @@ public class Produto {
         this.nome = nome;
     }
 
-    public double getPreco() {
+    public String getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(String preco) {
         this.preco = preco;
     }
 
-    public int getQuantidade() {
+    public String getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(int quantidade) {
+    public void setQuantidade(String quantidade) {
         this.quantidade = quantidade;
     }
 
 
+    /*
     public double valorEstoque() {
         return preco * quantidade;
     }
@@ -65,5 +68,6 @@ public class Produto {
                 + " unidades, Total: R$ "
                 + String.format("%.2f", valorEstoque());
     }
+*/
 
-}
+ }

@@ -5,16 +5,10 @@ import java.util.Scanner;
 public class ControllerCliente extends Cliente implements CadastrarCliente{
     Scanner ler = new Scanner(System.in);
 
-    public ControllerCliente(int id, String nome, String cpf, String telefone, String endereco, String email) {
-        super(id, nome, cpf, telefone, endereco, email);
+    public ControllerCliente(String nome, String cpf, String telefone, String endereco, String email) {
+        super(nome, cpf, telefone, endereco, email);
     }
 
-    @Override
-    public void id() {
-        System.out.println("Digite o ID: ");
-        setId(ler.nextInt());
-
-    }
 
     @Override
     public void nome() {
