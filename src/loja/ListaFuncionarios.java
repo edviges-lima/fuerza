@@ -25,7 +25,7 @@ public class ListaFuncionarios {
                             "Cargo: " + funcionario.getCargo() + "\n" +
                             "Data de Admissao: " + funcionario.getDataAdmissao() + "\n" +
                             "Data de Saída: " + funcionario.getSaida() + "\n" +
-                            "Salário: R$" + funcionario.getSalario() + "\n"
+                            "Salário: R$ " + funcionario.getSalario() + "\n"
             );
             System.out.println("-----------------------------------------------------------------------------");
         }
