@@ -1,9 +1,13 @@
 package loja;
 
-public class Cliente extends Pessoa {
+import java.util.Scanner;
+
+public class Cliente extends Pessoa{
     private String telefone;
     private String endereco;
     private String email;
+
+    Scanner ler = new Scanner(System.in);
 
     public Cliente( String nome, String cpf, String telefone, String endereco, String email) {
         super(nome, cpf);
@@ -11,6 +15,7 @@ public class Cliente extends Pessoa {
         this.endereco = endereco;
         this.email = email;
     }
+
 
     public String getTelefone() {
         return telefone;
@@ -36,7 +41,10 @@ public class Cliente extends Pessoa {
         this.email = email;
     }
 
+
+    /*
     public void visualizar(){
+
 
         System.out.println("************************ CLIENTE CADASTRADO ************************ ");
         System.out.println("Nome: " + getNome());
@@ -47,5 +55,6 @@ public class Cliente extends Pessoa {
         System.out.println("******************************************************************** ");
         System.out.println("\n");
     }
+     */
 
 }

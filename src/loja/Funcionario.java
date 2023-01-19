@@ -3,13 +3,18 @@ package loja;
 public class Funcionario extends Pessoa{
 
     public String cargo;
-    public String dataAdimissao;
+    public String dataAdmissao;
     public String saida;
     public String salario = "1200";
 
-    public Funcionario(String nome, String cpf) {
+    public Funcionario(String nome, String cpf, String cargo, String dataAdmissao, String saida, String salario) {
         super(nome, cpf);
+        this.cargo = cargo;
+        this.dataAdmissao = dataAdmissao;
+        this.saida = saida;
+        this.salario = salario;
     }
+
 
 
     public String getCargo() {
@@ -20,12 +25,12 @@ public class Funcionario extends Pessoa{
         this.cargo = cargo;
     }
 
-    public String getDataAdimissao() {
-        return dataAdimissao;
+    public String getDataAdmissao() {
+        return dataAdmissao;
     }
 
-    public void setDataAdimissao(String dataAdimissao) {
-        this.dataAdimissao = dataAdimissao;
+    public void setDataAdmissao(String dataAdmissao) {
+        this.dataAdmissao = dataAdmissao;
     }
 
     public String getSaida() {
@@ -49,7 +54,7 @@ public class Funcionario extends Pessoa{
         System.out.println("Nome: " + getNome());
         System.out.println("Cpf: " + getCpf());
         System.out.println("Cargo: " + getCargo());
-        System.out.println("Data de adimissão: " + getDataAdimissao());
+        System.out.println("Data de admissão: " + getDataAdmissao());
         System.out.println("Salário: " + getSalario());
         System.out.println("************************************************************************* ");
         System.out.println("\n");

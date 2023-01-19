@@ -7,15 +7,13 @@ public class Menu {
         Scanner ler = new Scanner(System.in);
 
         int opcao;
-        ControllerCliente cliente01 =  new  ControllerCliente("Null","null","null","null","null");
-        ControllerFuncionario funcionario01 = new ControllerFuncionario("Null","11221");
         ControllerProduto produto01 =  new ControllerProduto("1245", "Sal","0","Null");
         String ver;
         String finalizar = null;
-        ArrayList<String> lista = new ArrayList<>();
-        ArrayList<String> listaFuncionario = new ArrayList<>();
-        ArrayList<String> listaProduto = new ArrayList<>();
 
+        ListaClientes listaClientes = new ListaClientes();
+        Estoque estoque = new Estoque();
+        ListaFuncionarios listaFuncionarios = new ListaFuncionarios();
 
 
         while (true){
@@ -28,10 +26,7 @@ public class Menu {
                                    2 - Cadastro de Produtos             \s
                                    3 - Cadastro de Funcionários         \s
                                    4 - Controle de Vendas               \s
-                                   5 - Controle de Estoque              \s
-                                   6 - Controle de Pessoas              \s
-                                   7 - Histórico de Vendas              \s
-                                   8 - Sair                             \s
+                                   5 - Sair                             \s
                     *****************************************************
                     """);
 
@@ -39,99 +34,93 @@ public class Menu {
 
             switch (opcao) {
                 case 1:
-                    do{
-                    cliente01.nome();
-                    lista.add(cliente01.getNome());
-                    cliente01.cpf();
-                    lista.add(cliente01.getCpf());
-                    cliente01.telefone();
-                    lista.add(cliente01.getTelefone());
-                    cliente01.endereco();
-                    lista.add(cliente01.getEndereco());
-                    cliente01.email();
-                    lista.add(cliente01.getEmail());
-                    cliente01.visualizar();
-                    System.out.println("Deseja cadastrar outro cliente? S/N");
-                    finalizar = ler.next();
-                    }while(finalizar.equals("S"));
+                    do {
+                        System.out.println("Cadastrar Cliente\n\n");
 
+                        //String nome, String cpf, String telefone, String endereco, String email
+                        System.out.println("Nome: ");
+                        String nome = ler.next();
+                        System.out.println("CPF: ");
+                        String cpf = ler.next();
+                        System.out.println("Email: ");
+                        String email = ler.next();
+                        System.out.println("Telefone: ");
+                        String telefone = ler.next();
+                        System.out.println("Endereço: ");
+                        String endereco = ler.next();
+
+                        Cliente cliente = new Cliente(nome, cpf, telefone, endereco, email);
+                        listaClientes.adicionar(cliente);
+                        System.out.println("Deseja cadastrar outro cliente? S/N");
+                        finalizar = ler.next().toUpperCase();
+                    } while (finalizar.equals("S"));
                     System.out.println("Deseja ver o Cadastro dos Clientes? S/N ");
-                    ver = ler.next();
+                    ver = ler.next().toUpperCase();
+                    if (ver.equals("S")) {
 
-                    if(ver.equals("S")){
-
-                        System.out.println("LISTA COMPLETA:");
-                        for(String cliente: lista){
-                            System.out.println(cliente+"\n");
-
-
-                        }
+                        System.out.println("LISTA DE CLIENTES:");
+                        listaClientes.listar();
                     }
-
-
 
                     break;
                 case 2:
 
                     System.out.println("Cadastrar Produto\n\n");
 
-                    do{
-                        produto01.cod();
-                        listaProduto.add(produto01.getCod());
-                        produto01.nome();
-                        listaProduto.add(produto01.getNome());
-                        produto01.preco();
-                        listaProduto.add(produto01.getPreco());
-                        produto01.quantidade();
-                        listaProduto.add(produto01.getQuantidade());
+                    do {
+                        //String cod, String nome, String preco, String quantidade
+                        System.out.println("Código: ");
+                        String codigo = ler.next();
+                        System.out.println("Nome: ");
+                        String nome = ler.next();
+                        System.out.println("Preço: ");
+                        String preco = ler.next();
+                        System.out.println("Quantidade: ");
+                        String quantidade = ler.next();
+
+                        Produto produto = new Produto(codigo, nome, preco, quantidade);
+                        estoque.adicionar(produto);
                         System.out.println("Deseja cadastrar outro produto? S/N");
-                        finalizar = ler.next();
-                    }while(finalizar.equals("S"));
-                    System.out.println("Deseja ver o estoque? S/N ");
-                    ver = ler.next();
+                        finalizar = ler.next().toUpperCase();
+                    } while (finalizar.equals("S"));
+                    System.out.println("Deseja ver o Cadastro dos Produtos? S/N ");
+                    ver = ler.next().toUpperCase();
+                    if (ver.equals("S")) {
 
-                    if(ver.equals("S")){
-
-                        System.out.println("Estoque:");
-                        for(String estoque: listaProduto){
-                            System.out.println(estoque+"\n");
-
-
-                        }
+                        System.out.println("ESTOQUE:");
+                        estoque.listar();
                     }
-
-
 
                     break;
                 case 3:
                     System.out.println("Cadastrar Funcionário\n\n");
 
-                  do{
-                      funcionario01.nome();
-                      listaFuncionario.add(funcionario01.getNome());
-                      funcionario01.cpf();
-                      listaFuncionario.add(funcionario01.getCpf());
-                      funcionario01.cargo();
-                      listaFuncionario.add(funcionario01.getCargo());
-                      funcionario01.dataAdimissao();
-                      listaFuncionario.add(funcionario01.getDataAdimissao());
-                      funcionario01.visualizar();
-                      System.out.println("Deseja Cadastrar outro Funcionário? S/N");
-                      finalizar = ler.next();
+                    do {
+                        //String nome, String cpf, String cargo, String dataAdimissao, String saida, String salario
+                        System.out.println("Nome: ");
+                        String nome = ler.next();
+                        System.out.println("CPF: ");
+                        String cpf = ler.next();
+                        System.out.println("Cargo: ");
+                        String cargo = ler.next();
+                        System.out.println("Data de Admissao: ");
+                        String dataAdmissao = ler.next();
+                        System.out.println("Data de Saída: ");
+                        String dataSaida = ler.next();
+                        System.out.println("Salário: R$");
+                        String salario = ler.next();
 
-                  }while (finalizar.equals("S"));
-
+                        Funcionario funcionario = new Funcionario(nome, cpf, cargo, dataAdmissao, dataSaida, salario);
+                        listaFuncionarios.adicionar(funcionario);
+                        System.out.println("Deseja cadastrar outro funcionário? S/N");
+                        finalizar = ler.next().toUpperCase();
+                    } while (finalizar.equals("S"));
                     System.out.println("Deseja ver o Cadastro dos Funcionários? S/N ");
-                    ver = ler.next();
+                    ver = ler.next().toUpperCase();
+                    if (ver.equals("S")) {
 
-                    if(ver.equals("S")){
-
-                        System.out.println("LISTA COMPLETA:");
-                        for(String funcionario: listaFuncionario){
-                            System.out.println(funcionario+"\n");
-
-
-                        }
+                        System.out.println("LISTA DE FUNCIONÁRIOS:");
+                        listaFuncionarios.listar();
                     }
 
 
@@ -149,22 +138,11 @@ public class Menu {
                     System.out.println("Digite a quantidade de produtos: ");
                     int quantidadeP = ler.nextInt();
                     double total = precoP*quantidadeP;
-                    System.out.println("O total a pagar é de: "+ "R$ " + total);
+                    System.out.println("\nO total a pagar é de: "+ "R$ " + total);
 
                     break;
+
                 case 5:
-                    System.out.println("Controle de Estoque\n\n");
-
-                    break;
-                case 6:
-                    System.out.println("Controle de Pessoas\n\n");
-
-                    break;
-                case 7:
-                    System.out.println("Histórico de Vendas\n\n");
-
-                    break;
-                case 8:
                         System.out.println("\nEncerrando...");
                         ler.close();
                         System.exit(0);
