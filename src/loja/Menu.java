@@ -128,6 +128,8 @@ public class Menu {
             case 4:
                 System.out.println("Caixa:\n");
 
+                estoque.listar();
+
                 System.out.println("Digite o código do produto: ");
                 String codP = ler.next();
                 System.out.println("Digite o nome do produto: ");
